@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Nowoczesna czcionka */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Płynne przejście kolorów */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-size: 16px;
+  overflow-y: auto;
+}
+
+/* Kontener aplikacji */
+.container {
+  background: #fff;
+  width: 90%;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Dodanie animacji */
+}
+
+.container:hover {
+  transform: scale(1.05); /* Efekt powiększenia przy najechaniu */
+}
+
+/* Nagłówek */
+.container h1 {
+  font-family: 'Poppins', sans-serif;  /* Zmiana czcionki na Poppins */
+  font-size: 4rem; /* Powiększamy czcionkę, aby była bardziej wyrazista */
+  margin-bottom: 25px;
+  font-weight: 800; /* Grubsza czcionka, aby wyróżniała się bardziej */
+  color: #3a7bd5;
+  text-transform: uppercase;
+  letter-spacing: 5px; /* Większa przestrzeń między literami dla nowoczesnego wyglądu */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Subtelny cień pod tekstem dla lepszej widoczności */
+}
+
+/* DatePicker */
+.date-picker {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.date-picker div {
+  text-align: center;
+  padding: 15px;
+  background: #f1f1f1;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.date-picker div:hover {
+  background: #3a7bd5;
+  color: white;
+  transform: scale(1.1); /* Powiększenie elementu przy najechaniu */
+}
+
+.date-picker div.selected {
+  background: #2575fc;
+  color: white;
+  font-weight: bold;
+}
+
+/* TaskForm */
+.task-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.task-form input {
+  width: calc(50% - 10px);
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin:4px;
+}
+
+.task-form input:focus {
+  border-color: #3a7bd5;
+  box-shadow: 0 0 10px rgba(58, 123, 213, 0.5);
+}
+
+.task-form button {
+  padding: 15px 25px;
+  border: none;
+  background: #3a7bd5;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin:4px;
+}
+
+.task-form button:hover {
+  background: #345a99;
+}
+
+.task-form button:active {
+  background: #2575fc;
+}
+
+/* Filtry */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.filters button {
+  flex: 1;
+  padding: 15px;
+  margin: 0 5px;
+  border: none;
+  background: #f3f3f3;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.filters button:hover {
+  background: #d0d0d0;
+}
+
+.filters button:active {
+  background: #3a7bd5;
+  color: white;
+  transform: scale(1.05);
+}
+
+.filters button.selected {
+  background: #2575fc; /* Zmieniamy tło na niebieskie dla aktywnego przycisku */
+  color: white; /* Ustawiamy kolor tekstu na biały */
+  font-weight: bold;
+  transform: scale(1.05); /* Efekt powiększenia aktywnego przycisku */
+}
+/* TaskList */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #fafafa;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-item:hover {
+  background: #f0f8ff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: #aaa;
+  background: #f9f9f9;
+}
+
+.task-item .actions {
+  display: flex;
+  align-items: center;
+}
+
+.task-item .actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 15px;
+  font-size: 1.5rem; /* Ustalamy rozmiar ikony */
+  transition: color 0.3s ease;
+}
+
+.task-item .actions button:hover {
+  color: #3a7bd5;
+}
+
+.priority {
+  font-size: 2rem; /* Zwiększenie rozmiaru czcionki */
+  color: gold; /* Kolor gwiazdek */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtelny cień dla estetyki */
+  vertical-align: middle; /* Wyrównanie w pionie do środka */
+}
+
+
+
+.date-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.date-item {
+  text-align: center;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.date-item:hover {
+  background: #d0d0d0;
+}
+
+.date-item.selected {
+  background: #3a7bd5;
+  color: white;
+  font-weight: bold;
+}
+
+/* Stylizacja dla daty obecnej */
+.date-item.selected {
+  font-size: 1.2rem;
+  background-color: #3a7bd5;
+  color: white;
+}
+
+.date-item {
+  font-size: 1rem;
+}
+
+.task-item .actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 18px; /* Ustalamy rozmiar ikony */
+}
+
+.task-item .actions button:hover {
+  color: #3a7bd5;
+}
+
+.task-item .actions button:focus {
+  outline: none;
+}
+/* Styl dla listy rozwijanej (select) */
+select {
+  padding: 10px 15px; /* Wewnętrzny odstęp */
+  border: 1px solid #ddd; /* Delikatna obramówka jak w innych elementach */
+  border-radius: 10px; /* Zaokrąglone rogi */
+  background-color: #fafafa; /* Kolor tła, pasujący do innych elementów */
+  font-size: 1rem; /* Rozmiar czcionki */
+  color: #333; /* Kolor tekstu */
+  transition: all 0.3s ease; /* Płynne przejścia */
+}
+
+/* Styl przycisku po najechaniu */
+select:hover {
+  border-color: #3a7bd5; /* Zmiana koloru obramówki na niebieski przy najechaniu */
+  background-color: #f0f8ff; /* Subtelna zmiana koloru tła przy najechaniu */
+}
+
+/* Styl przycisku, gdy jest aktywny (focus) */
+select:focus {
+  border-color: #3a7bd5; /* Niebieska obramówka przy aktywności */
+  box-shadow: 0 0 8px rgba(58, 123, 213, 0.5); /* Subtelny cień, aby wyróżnić element */
+  outline: none; /* Usunięcie standardowej obramówki przeglądarki */
+}
